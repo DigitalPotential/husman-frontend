@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "title": "Spaghetti Carbonara",
+    "ingredients": "400g spaghetti\n200g pancetta\n4 large eggs\n100g Parmesan cheese\nFreshly ground black pepper",
+    "instructions": "Cook the spaghetti in a large pot of salted boiling water\nFry the pancetta until crispy\nWhisk eggs and cheese in a bowl\nMix everything together off the heat",
+    "cookingTime": 30,
+    "servings": 4,
+    "createdAt": "2023-04-01T12:00:00Z"
+  },
+  {
+    "id": "2",
+    "title": "Chicken Stir Fry",
+    "ingredients": "Chicken breast\nMixed vegetables\nSoy sauce\nGinger\nGarlic",
+    "instructions": "Cut chicken into pieces\nStir fry vegetables\nAdd chicken and sauce\nCook until done",
+    "cookingTime": 25,
+    "servings": 3,
+    "createdAt": "2023-04-02T12:00:00Z"
+  }
+]

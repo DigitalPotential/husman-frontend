@@ -15,6 +15,7 @@ interface Recipe {
 
 function App() {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchRecipes();
@@ -22,7 +23,9 @@ function App() {
 
   const fetchRecipes = async () => {
     try {
-      const response = await fetch("http://localhost:3000/recipes");
+      const response = await fetch(
+        "https://husmansbanken-27caca75ec38.herokuapp.com/recipes"
+      );
       if (!response.ok) {
         throw new Error("Failed to fetch recipes");
       }
@@ -30,6 +33,8 @@ function App() {
       setRecipes(data);
     } catch (error) {
       console.error("Error fetching recipes:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -38,11 +43,21 @@ function App() {
       <header>
         <h1>My Recipe Collection</h1>
       </header>
-      <main className="recipe-grid">
-        {recipes.map((recipe) => (
-          <RecipeCard key={recipe.id} recipe={recipe} />
-        ))}
-      </main>
+      {loading ? (
+        <p>Loading recipes...</p>
+      ) : (
+        <main>
+          {recipes.length > 0 ? (
+            <div className="recipe-grid">
+              {recipes.map((recipe) => (
+                <RecipeCard key={recipe.id} recipe={recipe} />
+              ))}
+            </div>
+          ) : (
+            <p>No recipes found</p>
+          )}
+        </main>
+      )}
     </div>
   );
 }
