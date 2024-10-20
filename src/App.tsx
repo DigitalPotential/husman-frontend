@@ -24,7 +24,7 @@ function App() {
   const fetchRecipes = async () => {
     try {
       const response = await fetch(
-        "https://husmansbanken-27caca75ec38.herokuapp.com/recipes"
+        "https://husmansbanken-with-cursor-boilerplate.vercel.app/recipes"
       );
       if (!response.ok) {
         throw new Error("Failed to fetch recipes");
