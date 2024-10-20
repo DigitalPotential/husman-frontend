@@ -42,8 +42,8 @@ export default function RecipeCard({ recipe }: RecipeCardProps) {
         />
         <div className="flex flex-col justify-between ml-4 flex-1">
           <CardHeader>
-            <CardTitle>{recipe.title}</CardTitle>
-            <CardDescription>
+            <CardTitle data-testid="recipe-title">{recipe.title}</CardTitle>
+            <CardDescription data-testid="recipe-description">
               Cooking Time: {recipe.cookingTime} mins | Servings:{" "}
               {recipe.servings}
             </CardDescription>
@@ -67,7 +67,10 @@ export default function RecipeCard({ recipe }: RecipeCardProps) {
             </div>
           </CardContent>
           <CardFooter>
-            <Button className="px-4 py-2 text-sm font-semibold rounded-md">
+            <Button
+              data-testid="view-recipe-button"
+              className="px-4 py-2 text-sm font-semibold rounded-md"
+            >
               View Recipe
             </Button>
           </CardFooter>
